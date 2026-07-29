@@ -1,18 +1,40 @@
-from pyacronis.endpoints.base.base_endpoint import AcronisEndpoint
-from pyacronis.endpoints.acronis.TenantsIdApplicationsEndpoint import TenantsIdApplicationsEndpoint
+from __future__ import annotations  # noqa: N999
+
+from pyacronis.endpoints.acronis.TenantsIdApplicationsEndpoint import (
+    TenantsIdApplicationsEndpoint,
+)
 from pyacronis.endpoints.acronis.TenantsIdBrandEndpoint import TenantsIdBrandEndpoint
-from pyacronis.endpoints.acronis.TenantsIdChildrenEndpoint import TenantsIdChildrenEndpoint
-from pyacronis.endpoints.acronis.TenantsIdDefaultIdpEndpoint import TenantsIdDefaultIdpEndpoint
-from pyacronis.endpoints.acronis.TenantsIdEditionEndpoint import TenantsIdEditionEndpoint
-from pyacronis.endpoints.acronis.TenantsIdLocationsEndpoint import TenantsIdLocationsEndpoint
+from pyacronis.endpoints.acronis.TenantsIdChildrenEndpoint import (
+    TenantsIdChildrenEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdDefaultIdpEndpoint import (
+    TenantsIdDefaultIdpEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdEditionEndpoint import (
+    TenantsIdEditionEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdLocationsEndpoint import (
+    TenantsIdLocationsEndpoint,
+)
 from pyacronis.endpoints.acronis.TenantsIdMfaEndpoint import TenantsIdMfaEndpoint
-from pyacronis.endpoints.acronis.TenantsIdOfferingItemsEndpoint import TenantsIdOfferingItemsEndpoint
-from pyacronis.endpoints.acronis.TenantsIdPricingEndpoint import TenantsIdPricingEndpoint
-from pyacronis.endpoints.acronis.TenantsIdRegistrationTokensEndpoint import TenantsIdRegistrationTokensEndpoint
-from pyacronis.endpoints.acronis.TenantsIdReportsEndpoint import TenantsIdReportsEndpoint
-from pyacronis.endpoints.acronis.TenantsIdRestoreEndpoint import TenantsIdRestoreEndpoint
+from pyacronis.endpoints.acronis.TenantsIdOfferingItemsEndpoint import (
+    TenantsIdOfferingItemsEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdPricingEndpoint import (
+    TenantsIdPricingEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdRegistrationTokensEndpoint import (
+    TenantsIdRegistrationTokensEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdReportsEndpoint import (
+    TenantsIdReportsEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsIdRestoreEndpoint import (
+    TenantsIdRestoreEndpoint,
+)
 from pyacronis.endpoints.acronis.TenantsIdUsagesEndpoint import TenantsIdUsagesEndpoint
 from pyacronis.endpoints.acronis.TenantsIdUsersEndpoint import TenantsIdUsersEndpoint
+from pyacronis.endpoints.base.base_endpoint import AcronisEndpoint
 from pyacronis.interfaces import (
     IGettable,
     IPuttable,

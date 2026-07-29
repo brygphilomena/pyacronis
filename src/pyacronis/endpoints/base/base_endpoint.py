@@ -157,6 +157,9 @@ class AcronisEndpoint:
         return self._build_url(self)
 
     def _parse_many(self, model_type: type[TModel], data: list[dict[str, Any]]) -> list[TModel]:
+        print(data)
+        for d in data:
+            print(model_type.model_validate(d))
         return [model_type.model_validate(d) for d in data]
 
     def _parse_one(self, model_type: type[TModel], data: dict[str, Any]) -> TModel:

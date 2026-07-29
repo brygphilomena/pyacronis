@@ -1,6 +1,7 @@
 from pyacronis.endpoints.base.base_endpoint import AcronisEndpoint
 from pyacronis.endpoints.acronis.LocationsIdEndpoint import LocationsIdEndpoint
 from pyacronis.interfaces import (
+    IGettable,
     IPostable,
 )
 from pyacronis.models.acronis import (
@@ -14,12 +15,14 @@ from pyacronis.types import (
 
 class LocationsEndpoint(
     AcronisEndpoint,
+    IGettable[Location, AcronisRequestParams],
     IPostable[Location, AcronisRequestParams],
 ):
     """Represents the /locations endpoint of the Acronis Account Management API."""
 
     def __init__(self, client, parent_endpoint=None) -> None:
         AcronisEndpoint.__init__(self, client, "locations", parent_endpoint=parent_endpoint)
+        IGettable.__init__(self, Location)
         IPostable.__init__(self, Location)
 
     def id(self, id: str) -> LocationsIdEndpoint:
@@ -40,7 +43,7 @@ class LocationsEndpoint(
         self,
         data: JSON | None = None,
         params: AcronisRequestParams | None = None,
-    ) -> list[dict]:
+    ) -> list[Location]:
         """
         Performs a GET request against the /locations endpoint.
 
@@ -48,9 +51,12 @@ class LocationsEndpoint(
             data (dict[str, Any]): The data to send in the request body.
             params (dict[str, int | str]): The parameters to send in the request query string.
         Returns:
-            list[dict]: The `items` from the response body, as returned by the API.
+            list[Location]: The parsed response data.
         """
-        return super()._make_request("GET", data=data, params=params).json().get("items", [])
+        return self._parse_many(
+            Location,
+            super()._make_request("GET", data=data, params=params).json().get("items", []),
+        )
 
     def post(
         self,

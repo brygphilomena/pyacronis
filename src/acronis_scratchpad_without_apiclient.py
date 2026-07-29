@@ -34,6 +34,6 @@ auth = {'Authorization': 'Bearer ' + token_info['access_token']}
 clientid_response = requests.get(f'{base_url}/clients/{client_id}', headers=auth)
 tenant_id = clientid_response.json()['tenant_id']
 
-datastuff = requests.get(f'{base_url}/tenants', headers=auth)
+datastuff = requests.get(f'{base_url}/tenants/{tenant_id}/usages', headers=auth)
 
-pprint.pprint(datastuff.json())
+print(datastuff.json())
