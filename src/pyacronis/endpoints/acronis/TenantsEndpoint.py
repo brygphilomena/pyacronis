@@ -1,8 +1,14 @@
-from pyacronis.endpoints.base.base_endpoint import AcronisEndpoint
-from pyacronis.endpoints.acronis.TenantsApplicationsEndpoint import TenantsApplicationsEndpoint
-from pyacronis.endpoints.acronis.TenantsOfferingItemsEndpoint import TenantsOfferingItemsEndpoint
-from pyacronis.endpoints.acronis.TenantsUsagesEndpoint import TenantsUsagesEndpoint
+from __future__ import annotations  # noqa: N999
+
+from pyacronis.endpoints.acronis.TenantsApplicationsEndpoint import (
+    TenantsApplicationsEndpoint,
+)
 from pyacronis.endpoints.acronis.TenantsIdEndpoint import TenantsIdEndpoint
+from pyacronis.endpoints.acronis.TenantsOfferingItemsEndpoint import (
+    TenantsOfferingItemsEndpoint,
+)
+from pyacronis.endpoints.acronis.TenantsUsagesEndpoint import TenantsUsagesEndpoint
+from pyacronis.endpoints.base.base_endpoint import AcronisEndpoint
 from pyacronis.interfaces import (
     IGettable,
     IPostable,

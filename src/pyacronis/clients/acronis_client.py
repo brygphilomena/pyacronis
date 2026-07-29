@@ -1,10 +1,8 @@
-import json
 import typing
 from base64 import b64encode
 from datetime import datetime, timedelta, timezone
 
 from pyacronis.clients.base_client import AcronisClient
-from pyacronis.config import Config
 
 if typing.TYPE_CHECKING:
     from pyacronis.endpoints.acronis.AccountsEndpoint import AccountsEndpoint
@@ -13,7 +11,9 @@ if typing.TYPE_CHECKING:
     from pyacronis.endpoints.acronis.IdpEndpoint import IdpEndpoint
     from pyacronis.endpoints.acronis.InfraEndpoint import InfraEndpoint
     from pyacronis.endpoints.acronis.LocationsEndpoint import LocationsEndpoint
-    from pyacronis.endpoints.acronis.RegistrationTokensEndpoint import RegistrationTokensEndpoint
+    from pyacronis.endpoints.acronis.RegistrationTokensEndpoint import (
+        RegistrationTokensEndpoint,
+    )
     from pyacronis.endpoints.acronis.ReportsEndpoint import ReportsEndpoint
     from pyacronis.endpoints.acronis.SearchEndpoint import SearchEndpoint
     from pyacronis.endpoints.acronis.TenantsEndpoint import TenantsEndpoint
@@ -57,7 +57,9 @@ class AcronisAPIClient(AcronisClient):
 
     @property
     def applications(self) -> "ApplicationsEndpoint":
-        from pyacronis.endpoints.acronis.ApplicationsEndpoint import ApplicationsEndpoint
+        from pyacronis.endpoints.acronis.ApplicationsEndpoint import (
+            ApplicationsEndpoint,
+        )
 
         return ApplicationsEndpoint(self)
 
@@ -87,7 +89,9 @@ class AcronisAPIClient(AcronisClient):
 
     @property
     def registration_tokens(self) -> "RegistrationTokensEndpoint":
-        from pyacronis.endpoints.acronis.RegistrationTokensEndpoint import RegistrationTokensEndpoint
+        from pyacronis.endpoints.acronis.RegistrationTokensEndpoint import (
+            RegistrationTokensEndpoint,
+        )
 
         return RegistrationTokensEndpoint(self)
 

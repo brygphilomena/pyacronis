@@ -13,6 +13,7 @@ load_dotenv()
 client_id = os.getenv('client_id')
 client_secret = os.getenv('client_secret')
 datacenter_url = os.getenv('datacenter_url')
+customer_tenant_id = "4ca4a787-74f8-48ba-aa3f-15720ff695a0"
 
 #Test without api client
 base_url = f'{datacenter_url}/api/2'
@@ -33,6 +34,6 @@ auth = {'Authorization': 'Bearer ' + token_info['access_token']}
 clientid_response = requests.get(f'{base_url}/clients/{client_id}', headers=auth)
 tenant_id = clientid_response.json()['tenant_id']
 
-datastuff = requests.get(f'{base_url}/tenants/4ca4a787-74f8-48ba-aa3f-15720ff695a0', headers=auth)
+datastuff = requests.get(f'{base_url}/tenants', headers=auth)
 
 pprint.pprint(datastuff.json())
